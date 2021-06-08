@@ -13,3 +13,20 @@ df = pd.read_csv('../creditcard.csv')
 
 fig = px.histogram(df, x='Class', color='Class')
 fig.show()
+
+
+# slider for later
+html.Div(
+            children=[
+                html.Div(children="Train Test Split", className="menu-title"),
+                daq.Slider(
+                    id="slider",
+                    min=0,
+                    max=100,
+                    value=70,
+                    handleLabel={"showCurrentValue": True, "label": "SPLIT"},
+                    step=10
+                ),
+            ],
+            className="menu"
+        )
